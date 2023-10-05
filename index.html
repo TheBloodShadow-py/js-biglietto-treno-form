@@ -22,15 +22,28 @@
   </head>
   <body class="font-['Open_Sans']">
     <main class="bg-[#dfe1e7]">
-      <div class="container my-0 mx-auto py-10">
-        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 place-items-center min-h-[100vh] px-5">
+      <div class="container my-0 min-h-[100vh] md:h-[100vh] mx-auto py-10">
+        <div class="grid h-[100%] gap-6 md:gap-0 grid-cols-1 md:grid-cols-2 place-items-center px-5">
           <div class="bg-[#15172b] flex flex-col gap-8 text-[#eeeeee] px-5 py-12 rounded-xl">
             <h1 class="text-3xl font-bold">Hello!</h1>
             <span class="text-sm font-bold">Generate your ticket!</span>
+            <input
+              placeholder="Name"
+              id="domName"
+              type="text"
+              class="placeholder:text-[#65657b] focus-visible:outline-none w-[17.5rem] capitalize bg-[#303245] border-0 rounded-xl py-3 px-3"
+            />
+            <input
+              placeholder="Surname"
+              id="domSurname"
+              type="text"
+              class="placeholder:text-[#65657b] focus-visible:outline-none w-[17.5rem] capitalize bg-[#303245] border-0 rounded-xl py-3 px-3"
+            />
             <select
+              id="domAge"
               class="focus-visible:outline-none w-[17.5rem] capitalize bg-[#303245] border-0 rounded-xl py-3 px-3"
             >
-              <option class="capitalize" value="0">Under Age</option>
+              <option class="capitalize" value="0">Under 18</option>
               <option class="capitalize" value="1">Of Age</option>
               <option class="capitalize" value="2">Over 65</option>
             </select>
@@ -90,12 +103,12 @@
                 </div>
                 <div class="flex justify-between items-center mt-4">
                   <div class="flex flex-col gap-1">
-                    <span class="text-[#ffcc05] text-lg">Final Price</span>
-                    <span class="text-black text-base" id="randomTicketNumber">0.00 &euro;</span>
+                    <span class="text-[#ffcc05] text-xl">Final Price</span>
+                    <span class="text-black text-base" id="finalPrice">0.00 &euro;</span>
                   </div>
                   <div class="flex flex-col gap-1">
-                    <span class="text-red-500 text-lg">Discount</span>
-                    <span class="text-black text-base text-right" id="domDiscount">20%</span>
+                    <span class="text-[#ffcc05] text-xl">Full name</span>
+                    <span class="text-black text-base text-right" id="domFullName">-</span>
                   </div>
                 </div>
               </div>
