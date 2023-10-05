@@ -27,7 +27,7 @@ function getPrice() {
   let km = domKm.value;
   domRandomTicketNumber.innerHTML = "AA" + randomNumber(9999);
 
-  if (!age || !km) {
+  if (!age || !km || !name || !surname) {
     alert("Non puoi lasciare i campi vuoti o inserire del testo");
     return;
   }
