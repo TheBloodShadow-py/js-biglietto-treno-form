@@ -47,9 +47,9 @@ function getPrice() {
 
   let ticketPrice = kmPirce * km;
 
-  if (age === 0) {
+  if (parseInt(age) === 0) {
     ticketPrice = km * kmPirce - km * kmPirce * under18Discount;
-  } else if (age === 2) {
+  } else if (parseInt(age) === 2) {
     ticketPrice = km * kmPirce - km * kmPirce * over65Discount;
   }
 
