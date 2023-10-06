@@ -20,15 +20,18 @@ function randomNumber(maxNumber) {
   return Math.floor(Math.random() * maxNumber) + 1;
 }
 
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function getPrice() {
   let name = domName.value;
   let surname = domSurname.value;
   let age = domAge.value;
   let km = domKm.value;
-  domRandomTicketNumber.innerHTML = "AA" + randomNumber(9999);
 
   if (!age || !km || !name || !surname) {
-    alert("Non puoi lasciare i campi vuoti o inserire del testo");
+    alert("Non puoi lasciare i campi vuoti");
     return;
   }
 
@@ -44,14 +47,15 @@ function getPrice() {
 
   let ticketPrice = kmPirce * km;
 
-  if ((age = 0)) {
+  if (age === 0) {
     ticketPrice = km * kmPirce - km * kmPirce * under18Discount;
-  } else if (age > 2) {
+  } else if (age === 2) {
     ticketPrice = km * kmPirce - km * kmPirce * over65Discount;
   }
 
   domFinalPrice.innerHTML = ticketPrice.toFixed(2) + euro;
-  domFullName.innerHTML = name + " " + surname;
+  domFullName.innerHTML = capitalizeFirstLetter(name) + " " + capitalizeFirstLetter(surname);
+  domRandomTicketNumber.innerHTML = "AA" + randomNumber(9999);
 
   return;
 }
